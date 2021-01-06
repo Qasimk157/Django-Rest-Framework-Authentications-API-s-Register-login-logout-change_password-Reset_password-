@@ -1,0 +1,24 @@
+Register:
+first register a user by giving local this link
+http://127.0.0.1:8000/api/register/
+Login:
+then login using register user and password
+http://127.0.0.1:8000/api/login/
+{
+    "username": "admin",
+    "password": "Password@123"
+}
+Reset_password:
+in header key=authorization and value token 3b45456f510b54b3b48b61454bad8e68e5cb08941679456c2e1f25862befe9ae
+in body, x www-form-urlencoded we will create old_password and new_password and give this success status
+ "status": "success",
+    "code": 200,
+    "message": "Password updated successfully",
+    "data": []
+ then log in using new password
+
+first we go to password_reset and give registered email
+http://127.0.0.1:8000/api/password_reset/
+then it will create a token in command promt we copy the token and go to postman at this link
+we will go in body using post method x-www-form-urlencoded and create in key a token and password and in value give them value toen and new password
+then again go to login server and login with new password 
